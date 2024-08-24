@@ -21,7 +21,7 @@ class Network(nn.Module):
         Initialize the network. Expects hyperparameters object.
 
         Args:
-            obs_shape: Shape of input observation. Examples: (1, 6), (1, 4, 84, 84)
+            obs_shape: Shape of input observation. Examples: (6,), (4, 84, 84)
             n_actions: Number of agent actions.
             n_atoms: Number of atoms in return distribution.
             n_hidden_units: Number of hidden units in fully-connected layer.
