@@ -26,6 +26,7 @@ class Agent:
                  batch_size: int,
                  learning_rate: float,
                  obs_shape: tuple,
+                 epsilon_start: float,
                  epsilon_end: float,
                  exploration_fraction: float,
                  training_steps: int,
@@ -45,6 +46,7 @@ class Agent:
             batch_size: Replay memory sample size.
             learning_rate: Optimizer learning rate.
             obs_shape: Env observation shape.
+            epsilon_start: Start epsilon value.
             epsilon_end: Final epsilon value.
             exploration_fraction: Fraction of training steps used to explore.
             training_steps: Number of training steps.
@@ -58,7 +60,6 @@ class Agent:
         """
         self._n_actions = n_actions
         self._batch_size = batch_size
-        epsilon_start = 1.0
         self._epsilon_end = epsilon_end
         self._epsilon = epsilon_start
         self._epsilon_decay = (epsilon_start - self._epsilon_end) / (exploration_fraction * training_steps)
